@@ -4,7 +4,6 @@ const email = $.querySelector(".email");
 const password = $.querySelector(".password");
 const form = $.querySelector("#form");
 const loginForm = $.querySelector("#loginForm");
-
 const Toast = Swal.mixin({
   toast: true,
   position: "top-end",
