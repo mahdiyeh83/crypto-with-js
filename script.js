@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("load", checkVisibility);
   window.addEventListener("scroll", checkVisibility);
 
-  // تایپ خودکار متن
   const text = "به صرافی ارز دیجیتال دلری خوش آمدید";
   const h2Element = document.getElementById("auto-typing");
   let index = 0;
@@ -27,7 +26,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   typeText();
 
-  // منوی همبرگری
   const hamburger = document.getElementById("hamburger");
   const navMenu = document.querySelector("#navbar ul");
   hamburger.addEventListener("click", () => {
@@ -42,15 +40,13 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // نمایش ارزها
-  const coinTableBody = document.querySelector("#coin-table tbody");
-  const loadMoreBtn = document.getElementById("load-more");
-// در بخش نمایش ارزها
+const coinTableBody = document.querySelector("#coin-table tbody");
+const loadMoreBtn = document.getElementById("load-more");
 let showAllCoins = false;
 const initialDisplayCount = 5;
 
 function displayCoins(coins) {
-  coinTableBody.innerHTML = ''; // پاک کردن محتوای قبلی
+  coinTableBody.innerHTML = ''; 
   
   const coinsToDisplay = showAllCoins ? coins : coins.slice(0, initialDisplayCount);
   
@@ -70,7 +66,6 @@ function displayCoins(coins) {
       `;
       coinTableBody.appendChild(row);
       
-      // اضافه کردن event listener به دکمه‌های جدید
       row.querySelector(".buy-btn").addEventListener("click", function() {
           document.getElementById("from-coin").value = coin.symbol;
           document.getElementById("to-coin").value = "IRR";
@@ -98,16 +93,13 @@ function displayCoins(coins) {
       });
   });
   
-  // به روز رسانی متن دکمه
   loadMoreBtn.textContent = showAllCoins ? "کمتر" : "بیشتر";
 }
-// رویداد کلیک برای دکمه بیشتر/کمتر
 loadMoreBtn.addEventListener("click", () => {
     showAllCoins = !showAllCoins;
     displayCoins(coins);
 });
 
-  // تبدیل ارز
   const usdToIrrRate = 1000000;
 
   function populateCoinDropdowns(coins) {
@@ -195,15 +187,13 @@ loadMoreBtn.addEventListener("click", () => {
       });
   }
 
-  // بارگذاری داده‌های ارزها
   fetch("cryptocurrencies.json")
     .then((response) => response.json())
     .then((data) => {
       coins = data.cryptocurrencies;
       populateCoinDropdowns(coins);
-      displayCoins(coins); // استفاده از تابع جدید
+      displayCoins(coins); 
         
-      // رویداد کلیک برای دکمه‌های خرید/فروش
       document.querySelectorAll(".buy-btn, .sell-btn").forEach((btn) => {
         btn.addEventListener("click", function () {
           const row = this.closest("tr");
@@ -228,7 +218,6 @@ loadMoreBtn.addEventListener("click", () => {
       coinTableBody.innerHTML = `<tr><td colspan="5">خطا در بارگذاری داده‌ها</td></tr>`;
     });
 
-  // رویداد کلیک برای دکمه تبدیل
   document.getElementById("convert-btn").addEventListener("click", () => {
     const from = document.getElementById("from-coin");
     const to = document.getElementById("to-coin");
@@ -237,7 +226,6 @@ loadMoreBtn.addEventListener("click", () => {
     to.value = temp;
   });
 
-  // رویداد سابمیت فرم تبدیل
   document.getElementById("convert-form").addEventListener("submit", function (e) {
     e.preventDefault();
     const fromSymbol = document.getElementById("from-coin").value;
@@ -246,7 +234,6 @@ loadMoreBtn.addEventListener("click", () => {
     convertCurrency(fromSymbol, toSymbol, amount);
   });
 
-  // مدیریت وضعیت ورود کاربر
   const isLoggedIn = localStorage.getItem("isLoggedIn") === "true";
   if (isLoggedIn) {
     const username = localStorage.getItem("username");
