@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/x-icon" href="./img/logo.png">
+        <title>صرافی ارز دلری</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </head>
+    <body>
+        <nav id="navbar">
+            <div class="container">
+                <img src="./img/logo.png" alt="صرافی ارز دیجیتال">
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="hide">
+                    <li><a href="#banner">خانه</a></li>
+                    <li><a href="#coin-list">لیست ارزها</a></li>
+                    <li><a href="#convert-box">تبدیل ارز</a></li>
+                    <li><a href="#footer">تماس با ما</a></li>
+                </ul>
+                <button id="auth-btn">
+                    <a href="./components/login/login.html"
+                        id="login-btn">ورود</a>
+                    <button id="profile-btn" style="display: none;"></button>
+                </button>
+            </div>
+        </nav>
+        <section id="banner">
+            <div class="container">
+                <h2 id="auto-typing"></h2>
+                <p>امنیت و سرعت در معاملات ارزهای دیجیتال</p>
+                <div class="banner-background"></div>
+            </div>
+        </section>
+        <section id="dashboard" class="section-animate fadeInUp">
+            <div class="container">
+                <h2>کیف پول</h2>
+                <div class="cards">
+                    <div class="card">موجودی کل: $10,000</div>
+                    <div class="card">سود ۲۴ ساعته: $500</div>
+                    <div class="card">معاملات فعال: 3</div>
+                </div>
+            </div>
+        </section>
+        <section id="coin-list" class="section-animate fadeInUp">
+            <div class="container">
+                <h2>لیست ارزهای دیجیتال</h2>
+                <table id="coin-table">
+                    <thead>
+                        <tr>
+                            <th>نام فارسی</th>
+                            <th>نام انگلیسی</th>
+                            <th>قیمت (دلار)</th>
+                            <th>تغییرات (24h)</th>
+                            <th>عملیات</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <div id="load-more-container">
+                    <button class="load-more" id="load-more">بیشتر</button>
+                </div>
+        </section>
+        <section id="convert-box" class="section-animate fadeInUp">
+            <div class="container">
+                <h2>تبدیل ارز</h2>
+                <form id="convert-form" class="convert-form">
+                    <select id="from-coin">
+                        <option value>از ارز</option>
+                    </select>
+                    <input type="number" id="amount-input" placeholder="مقدار"
+                        min="0">
+                    <button id="convert-btn" type="button"><img
+                            src="./img/exchange.svg" alt></button>
+                    <select id="to-coin">
+                        <option value>به ارز</option>
+                    </select>
+                    <button type="submit">تبدیل</button>
+                </form>
+                <div id="conversion-result"></div>
+            </div>
+        </section>
+        <footer id="footer">
+            <div class="container">
+                <div class="footer-section">
+                    <h3>درباره ما</h3>
+                    <p class="about">صرافی ارز دلری یک پلتفرم امن و سریع برای
+                        خرید و فروش ارزهای دیجیتال است. ما با استفاده از
+                        جدیدترین تکنولوژی‌ها امنیت و سرعت را برای کاربران خود
+                        تضمین می‌کنیم.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>لینک‌های مفید</h3>
+                    <ul>
+                        <li><a href="#banner">خانه</a></li>
+                        <li><a href="#coin-list">لیست ارزها</a></li>
+                        <li><a href="#convert-box">تبدیل ارز</a></li>
+                        <li><a href="#footer">تماس با ما</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>تماس با ما</h3>
+                    <p><strong>ایمیل:</strong> dollaryexchange@gmail.com</p>
+                    <p><strong>تلفن:</strong> ۰۱۱-۱۲۳۴۵۶۷۸</p>
+                    <p><strong>آدرس:</strong> مازندران،بابل، برج صرافی</p>
+                </div>
+                <div class="footer-section">
+                    <h3>ما را دنبال کنید</h3>
+                    <div class="social-icons">
+                        <a href="#"><img src="./img/facebook.svg"
+                                alt="فیس‌بوک"></a>
+                        <a href="#"><img src="./img/telegram.svg"
+                                alt="توییتر"></a>
+                        <a href="#"><img src="./img/instagram.svg"
+                                alt="اینستاگرام"></a>
+                        <a href="#"><img src="./img/linkedin.svg"
+                                alt="لینکدین"></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <div class="namad-container">
+                        <a
+                            href="https://trustseal.enamad.ir/?id=YOUR_ID&Code=YOUR_CODE"
+                            target="_blank">
+                            <img src="./img/enamad.png"
+                                alt="نماد اعتماد الکترونیکی">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>کلیه حقوق محفوظ است &copy; ۲۰۲۵ صرافی ارز دلری</p>
+            </div>
+        </footer>
+        <script src="script.js"></script>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script
+            src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+        <script
+            src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth-compat.js"></script>
+    </body>
+</html>

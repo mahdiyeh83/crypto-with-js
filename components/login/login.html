@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Verification</title>
+	<link rel="stylesheet" type="text/css" href="./login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+	<div class="main">  	
+		<input type="checkbox" id="chk" aria-hidden="true">
+
+			<div class="signup">
+				<form id="form">
+					<label for="chk" aria-hidden="true">ثبت نام</label>
+					<input class="username" type="text" name="txt" placeholder="نام کاربری" required=""dir="rtl">
+					<div class="error-message" id="username-error"></div>
+					<input class="email" type="email" name="email" placeholder="ایمیل" required="" dir="rtl" pattern="[^\s@]+@[^\s@]+\.[^\s@]+">					<div class="error-message" id="email-error"></div>
+					<input class="password" type="password" name="pswd" placeholder="رمز عبور" required=""dir="rtl">
+					<div class="error-message" id="password-error"></div>
+					<button>ثبت نام</button>
+				</form>
+			</div>
+
+			<div class="login">
+				<form id="loginForm">
+					<label for="chk" aria-hidden="true">ورود</label>
+					<input class="email" type="email" name="email" placeholder="ایمیل" required="" dir="rtl" pattern="[^\s@]+@[^\s@]+\.[^\s@]+">					<div class="error-message" id="login-email-error"></div>
+					<input type="password" name="pswd" placeholder="رمز عبور" required=""dir="rtl">
+					<div class="error-message" id="login-password-error"></div>
+					<button>ورود</button>
+				</form>
+			</div>
+	</div>
+	<script src="./login.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth-compat.js"></script>
+</body>
+</html>
