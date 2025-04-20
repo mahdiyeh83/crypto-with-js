@@ -1,4 +1,3 @@
-// login.js
 const $ = document;
 const username = $.querySelector(".username");
 const email = $.querySelector(".email");
@@ -158,7 +157,6 @@ loginForm.addEventListener("submit", async (e) => {
 
   if (isValid) {
     try {
-      // دریافت لیست کاربران از پایگاه داده
       const response = await fetch("https://delryregister-default-rtdb.firebaseio.com/users.json");
       const users = await response.json();
       
