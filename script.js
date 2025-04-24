@@ -1,18 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const sections = document.querySelectorAll(".section-animate");
-  const checkVisibility = () => {
-    sections.forEach((section) => {
-      const sectionTop = section.getBoundingClientRect().top;
-      const sectionBottom = section.getBoundingClientRect().bottom;
-      if (sectionTop < window.innerHeight && sectionBottom > 0) {
-        section.classList.add("visible");
-      } else {
-        section.classList.remove("visible");
-      }
-    });
-  };
-  window.addEventListener("load", checkVisibility);
-  window.addEventListener("scroll", checkVisibility);
 
   const text = "به صرافی ارز دیجیتال دلری خوش آمدید";
   const h2Element = document.getElementById("auto-typing");
