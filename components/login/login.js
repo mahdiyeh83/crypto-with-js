@@ -1,11 +1,9 @@
-// login.js
 const $ = document;
 const username = $.querySelector(".username");
 const email = $.querySelector(".email");
 const password = $.querySelector(".password");
 const form = $.querySelector("#form");
 const loginForm = $.querySelector("#loginForm");
-
 const Toast = Swal.mixin({
   toast: true,
   position: "top-end",
@@ -158,7 +156,6 @@ loginForm.addEventListener("submit", async (e) => {
 
   if (isValid) {
     try {
-      // دریافت لیست کاربران از پایگاه داده
       const response = await fetch("https://delryregister-default-rtdb.firebaseio.com/users.json");
       const users = await response.json();
       
